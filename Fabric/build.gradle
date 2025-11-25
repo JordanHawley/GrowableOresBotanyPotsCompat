@@ -32,12 +32,6 @@ repositories {
         url = "https://maven.blamejared.com/"
     }
     maven { url "https://maven.shedaniel.me" }
-
-    maven {
-        url 'https://maven.terraformersmc.com/'
-    }
-
-    maven { url = System.getenv("MAVEN_URL") } //GrowableOres
     // Add repositories to retrieve artifacts from in here.
     // You should only use this when depending on other mods because
     // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
@@ -56,15 +50,13 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${project.rei_version}"
     modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
-    modRuntimeOnly("curse.maven:botany-pots-353928:6910389")
-    modRuntimeOnly group: 'net.darkhax.pricklemc', name: "prickle-fabric-${project.minecraft_version}", version: "${project.prickle_version}"
-    modRuntimeOnly group: 'net.darkhax.bookshelf', name: "bookshelf-fabric-${project.minecraft_version}", version: "${project.bookshelf_version}"
-   /* include modApi('teamreborn:energy:3.0.0') {
-        exclude(group: "net.fabricmc.fabric-api")
-    }
 
-    modImplementation  ("curse.maven:reborncore-237903:4582416")
-    modImplementation  ("curse.maven:techreborn-233564:4582415")*/
+    /* include modApi('teamreborn:energy:3.0.0') {
+         exclude(group: "net.fabricmc.fabric-api")
+     }
+
+     modImplementation  ("curse.maven:reborncore-237903:4582416")
+     modImplementation  ("curse.maven:techreborn-233564:4582415")*/
 
     //modImplementation  ("curse.maven:powah-633483:4638300")
 

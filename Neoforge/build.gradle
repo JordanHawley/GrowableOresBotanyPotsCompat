@@ -3,7 +3,7 @@ plugins {
     id 'eclipse'
     id 'idea'
     id 'maven-publish'
-     id 'net.neoforged.moddev' version '2.0.+'
+    id 'net.neoforged.moddev' version '2.0.73'
 }
 
 version = "${project.neoforge_mod_version}"
@@ -15,15 +15,6 @@ repositories {
         // location of the maven that hosts JEI files since January 2023
         name = "Jared's maven"
         url = "https://maven.blamejared.com/"
-    }
-    maven { url = "https://maven.createmod.net" } // Create, Ponder, Flywheel
-    maven { url = "https://maven.ithundxr.dev/snapshots" } // Registrate
-    maven { url = System.getenv("MAVEN_URL") } //GrowableOres
-    maven {
-        url "https://cursemaven.com"
-    }
-    maven {
-        url 'https://maven.blamejared.com'
     }
 }
 
@@ -135,10 +126,6 @@ dependencies {
     compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
     // at runtime, use the full JEI jar for NeoForge
     runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
-    implementation("curse.maven:botany-pots-353928:6910390")
-    implementation("com.skniro:GrowableOres:${growableores_version}-${mc_version}-NeoForge")
-    implementation group: 'net.darkhax.pricklemc', name: "prickle-neoforge-${project.minecraft_version}", version: "${project.prickle_version}"
-    implementation group: 'net.darkhax.bookshelf', name: "bookshelf-neoforge-${project.minecraft_version}", version: "${project.bookshelf_version}"
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
     // The group id is ignored when searching -- in this case, it is "blank"
